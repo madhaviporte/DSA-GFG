@@ -4,15 +4,15 @@ class Solution {
         int n = arr.length;
         int pivot = -1;
         
-        //find pivote number
+        // find the pivote number;
         for(int i=n-2; i>=0; i--){
             if(arr[i]<arr[i+1]){
-                pivot=i;
+                pivot = i;
                 break;
             }
         }
         
-        //find number which is greter than pivot number
+        // find the just greater number to pivote
         if(pivot != -1){
             for(int i=n-1; i>pivot; i--){
                 if(arr[i]>arr[pivot]){
@@ -24,13 +24,14 @@ class Solution {
             }
         }
         
-        //revers element after pivot
+        // reverse the number
+        
         int st = pivot + 1;
         int end = n-1;
         while(st<end){
-            int d = arr[st];
+            int temp = arr[st];
             arr[st] = arr[end];
-            arr[end] = d;
+            arr[end] = temp;
             st++;
             end--;
         }
