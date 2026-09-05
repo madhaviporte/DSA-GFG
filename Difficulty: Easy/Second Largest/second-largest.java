@@ -5,16 +5,17 @@ class Solution {
         int max = -1;
         
         for(int i=0; i<n; i++){
-            if(arr[i]>max){
+            if(max<arr[i]){
                 max = arr[i];
             }
         }
-        int Smax = -1;
+        
+        int sMax = -1;
         for(int i=0; i<n; i++){
-            if(arr[i]> Smax && arr[i] != max){
-                Smax = arr[i];
+            if(arr[i]>sMax && arr[i]!=max){
+                sMax = arr[i];
             }
         }
-        return Smax;
+        return sMax;
     }
 }
