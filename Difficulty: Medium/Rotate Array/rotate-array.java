@@ -1,21 +1,26 @@
 class Solution {
     public void rotateArr(int arr[], int d) {
         // code here
-         int n = arr.length;
-        Queue<Integer> q = new LinkedList<>();
-        d = d%n;
+        int n = arr.length;
+        d=d%n;
         
-        for(int i=d;i<n;i++){
-            q.add(arr[i]);
-        }
+        // first d element reverse
+        reverse(arr,0,d-1);
         
-        for(int i=0;i<d;i++){
-            q.add(arr[i]);
-        }
+        // rmeianing elements reverse
+        reverse(arr,d,n-1);
         
-        for(int i = 0; i < n; i++){
-            int removeEle = q.remove();
-            arr[i] = removeEle;
+        //whole arr reverse
+        reverse(arr,0,n-1);
+    }
+    
+    public void reverse(int arr[], int start, int end){
+        while(start<end){
+            int temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start++;
+            end--;
         }
     }
 }
