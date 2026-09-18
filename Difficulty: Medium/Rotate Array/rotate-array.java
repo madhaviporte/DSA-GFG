@@ -2,15 +2,15 @@ class Solution {
     public void rotateArr(int arr[], int d) {
         // code here
         int n = arr.length;
-        d=d%n;
+        d = d % n;
         
-        // first d element reverse
+        // rotate d elements
         reverse(arr,0,d-1);
         
-        // rmeianing elements reverse
+        // roated rest of array
         reverse(arr,d,n-1);
         
-        //whole arr reverse
+        // rotate whole the array
         reverse(arr,0,n-1);
     }
     
