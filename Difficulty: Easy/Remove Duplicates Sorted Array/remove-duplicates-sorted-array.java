@@ -2,24 +2,21 @@ class Solution {
     ArrayList<Integer> removeDuplicates(int[] arr) {
         // code here
         ArrayList<Integer> res = new ArrayList<>();
-        
-        if(arr.length==0){
+        int n = arr.length;
+        if(n==0){
             res.add(0);
             return res;
         }
-        
-        int i = 0;
-        for(int j=1; j<arr.length; j++){
-            if(arr[i]!=arr[j]){
-                i++;
+        int i=1;
+        for(int j=1; j<n; j++){
+            if(arr[i-1]!=arr[j]){
                 arr[i] = arr[j];
+                i++;
             }
         }
-        for(int k=0; k<=i; k++){
+        for(int k=0; k<i; k++){
             res.add(arr[k]);
         }
         return res;
     }
 }
-
-
